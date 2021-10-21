@@ -1,0 +1,96 @@
+{
+    "$schema": "vscode://schemas/CMakeLists",
+    "name": "Camera",
+    "version": "1.0.0",
+    "entry": "src/face_recognition/main.c",
+    "source": [
+        "src/Draco/display.c",
+        "src/Draco/gc0308.c",
+        "src/Draco/ili9341.c",
+        "src/Draco/lcd.c",
+        "src/Draco/main.c",
+        "src/Draco/test.c",
+        "src/Draco/camera.c"
+    ],
+    "link_flags": [
+        "-march=rv64imafc",
+        "-mabi=lp64f",
+        "-nostartfiles",
+        "-Wl,--gc-sections",
+        "-Wl,-static",
+        "-Wl,-EL",
+        "-Wl,--no-relax",
+        "-Wl,--gc-sections,-Map=rtthread.map,-cref,-u,_start"
+    ],
+    "extraList": "",
+    "ld_file": "",
+    "properties": {
+        "LINKER_LANGUAGE": "C"
+    },
+    "definitions": {
+        "TCB_SPAN_NO_EXCEPTIONS:raw": "",
+        "TCB_SPAN_NO_CONTRACT_CHECKING:raw": "",
+        "NNCASE_TARGET:raw": "k210",
+        "KENDRYTE_SDK_TYPE:raw": "1",
+        "KENDRYTE_SDK_TYPE_STANDALONE:raw": "1",
+        "KENDRYTE_SDK_TYPE_FREERTOS:raw": "2",
+        "KENDRYTE_SDK_RELEASE_DATE:raw": "0",
+        "HAVE_CCONFIG_H:raw": "",
+        "RT_USING_NEWLIB:raw": "",
+        "HAVE_SYS_SELECT_H:raw": "",
+        "HAVE_SIGVAL:raw": "",
+        "HAVE_SIGEVENT:raw": "",
+        "HAVE_SIGINFO:raw": "",
+        "CONFIG_LOG_COLORS:raw": "",
+        "CONFIG_LOG_ENABLE:raw": "",
+        "FPGA_PLL:raw": "",
+        "__riscv64:raw": ""
+    },
+    "dependency": {
+        "kendryte_standalone-sdk": "develop"
+    },
+    "header": [
+        "src/",
+        "components/",
+        "src/Draco"
+    ],
+    "c_flags": [
+        "-std=gnu11",
+        "-Wno-pointer-to-int-cast",
+        "-Wno-old-style-declaration"
+    ],
+    "cpp_flags": [
+        "-std=gnu++17"
+    ],
+    "c_cpp_flags": [
+        "-mcmodel=medany",
+        "-mabi=lp64f",
+        "-march=rv64imafc",
+        "-ffunction-sections",
+        "-fdata-sections",
+        "-fstrict-volatile-bitfields",
+        "-fno-zero-initialized-in-bss",
+        "-ffloat-store",
+        "-O2",
+        "-Wall",
+        "-Werror=all",
+        "-Wno-error=unused-function",
+        "-Wno-error=missing-braces",
+        "-Wno-error=tautological-compare",
+        "-Wno-error=unused-variable",
+        "-Wno-error=unused-const-variable",
+        "-Wno-error=unused-but-set-variable",
+        "-Wno-error=pointer-sign",
+        "-Wno-error=maybe-uninitialized",
+        "-Wno-error=stringop-truncation",
+        "-Wno-error=int-in-bool-context",
+        "-Wno-error=sign-compare"
+    ],
+    "localDependency": [],
+    "systemLibrary": [
+        "stdc++",
+        "gcc",
+        "m",
+        "c"
+    ]
+}

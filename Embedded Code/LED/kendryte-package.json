@@ -1,0 +1,14 @@
+{
+    "$schema": "vscode://schemas/CMakeLists",
+    "name": "hello_world",
+    "version": "1.0.0",
+    "entry": "src/main.c",
+    "source": [
+        "src/*.c",
+        "src/*.cpp",
+        "src/*.h"
+    ],
+    "dependency": {
+	    "kendryte/standalone-sdk": "develop"
+    }
+}
